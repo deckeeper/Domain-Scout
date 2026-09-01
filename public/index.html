@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Passive domain exposure discovery using public internet data.">
+  <title>Domain Scout</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div class="eyebrow">PASSIVE EXTERNAL VIEW</div>
+      <h1>Domain Scout</h1>
+      <p>Discover certificate-listed hosts, current DNS and previously observed ports—without running an active port scan.</p>
+    </header>
+
+    <form id="scan-form">
+      <label for="domain">Domain name</label>
+      <div class="search-row">
+        <input id="domain" name="domain" value="deckeeper.me" autocomplete="off" spellcheck="false" placeholder="example.com" required>
+        <button id="scan-button" type="submit">Run passive scan</button>
+      </div>
+      <div class="hint">Only public DNS and passive internet-index data are queried.</div>
+    </form>
+
+    <section id="status" class="status hidden" aria-live="polite"></section>
+
+    <section id="results" class="hidden">
+      <div class="summary" id="summary"></div>
+      <div class="toolbar">
+        <div id="source-note"></div>
+        <div>
+          <button class="secondary" id="json-export" type="button">Export JSON</button>
+          <button class="secondary" id="csv-export" type="button">Export CSV</button>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Hostname</th><th>DNS / target</th><th>Known ports</th><th>Exposure notes</th></tr></thead>
+          <tbody id="host-rows"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer>Results are a point-in-time external view and may be incomplete.</footer>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
