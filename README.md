@@ -85,19 +85,19 @@ These controls reduce the risk of using the public Worker as an SSRF or unrestri
 
 ```text
 Domain-Scout/
-â”œâ”€â”€ lib/
-â”‚   â””â”€â”€ scanner.mjs       # Discovery, DNS, web and enrichment logic
-â”œâ”€â”€ public/
-â”‚   â”œâ”€â”€ index.html        # Application interface
-â”‚   â”œâ”€â”€ app.js            # Browser behavior and report rendering
-â”‚   â””â”€â”€ styles.css        # Responsive visual design
-â”œâ”€â”€ src/
-â”‚   â””â”€â”€ worker.js         # Cloudflare Worker API and asset routing
-â”œâ”€â”€ tests/
-â”‚   â””â”€â”€ scanner.test.mjs  # Automated scanner tests
-â”œâ”€â”€ dev-server.mjs        # Dependency-free local development server
-â”œâ”€â”€ package.json
-â””â”€â”€ wrangler.jsonc        # Cloudflare Worker configuration
+├── lib/
+│   └── scanner.mjs       # Discovery, DNS, web and enrichment logic
+├── public/
+│   ├── index.html        # Application interface
+│   ├── app.js            # Browser behavior and report rendering
+│   └── styles.css        # Responsive visual design
+├── src/
+│   └── worker.js         # Cloudflare Worker API and asset routing
+├── tests/
+│   └── scanner.test.mjs  # Automated scanner tests
+├── dev-server.mjs        # Dependency-free local development server
+├── package.json
+└── wrangler.jsonc        # Cloudflare Worker configuration
 ```
 
 The older `functions/` directory is only relevant to a traditional Cloudflare Pages Functions deployment. The current Workers deployment uses `src/worker.js`.
